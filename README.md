@@ -22,3 +22,7 @@
  4. Install front-end dependencies: `client-install`.
  5. Install back-end dependencies: `npm install`.
  6. Start the app: `npm run dev`(will open the browser on http://localhost:3000).
+
+
+`Note`: 
+in development mode the front-end of the app running at port 3000, while the back-end of the app running at port 5000 .
