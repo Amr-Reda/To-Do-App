@@ -11,7 +11,8 @@
  - [Reactjs](https://reactjs.org/)
  - [MongoDB](https://www.mongodb.com/)
  - [reactstrap](https://reactstrap.github.io/)
- 
+ - [remotemysql](https://remotemysql.com/)
+ - [freesqldatabase](https://www.freesqldatabase.com/freemysqldatabase/)
  
  ## Installation & Development
  
