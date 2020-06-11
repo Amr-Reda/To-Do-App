@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+const userAuth = require('./middlewares/auth');
 const api = require('./api');
 
 const app = express();
@@ -11,7 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // mongoose.connect('mongodb://localhost/to_do_list')
-mongoose.connect('mongodb://root:root123@ds141623.mlab.com:41623/to_do_list')
+mongoose.connect(process.env.MONGO_DB_URI)
 .then(()=>console.log("mongoDB connected"))
 .catch(err=>console.log(err));
 
@@ -23,7 +24,7 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.use('/api',api);
+app.use('/api', userAuth, api);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
