@@ -30,7 +30,7 @@ class AddButton extends React.Component {
   render() {
     return (
       <div>
-        <Button color="danger" onClick={this.toggle} style={{ margin: 'auto', display: 'block' }} size="lg">{this.props.buttonLabel}</Button>
+        <Button color="success" onClick={this.toggle} style={{ margin: 'auto', display: 'block' }} size="lg">{this.props.buttonLabel}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>ADD To-Do</ModalHeader>
           <ModalBody>
