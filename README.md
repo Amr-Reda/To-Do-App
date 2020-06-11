@@ -14,6 +14,7 @@
  - [remotemysql](https://remotemysql.com/)
  - [freesqldatabase](https://www.freesqldatabase.com/freemysqldatabase/)
  - [mlab](https://mlab.com/)
+ - [auth0](https://auth0.com//)
  
  ## Installation & Development
  
