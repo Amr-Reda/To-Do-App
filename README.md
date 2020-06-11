@@ -23,7 +23,8 @@
  3. Change to root directory.
  4. Install front-end dependencies: `client-install`.
  5. Install back-end dependencies: `npm install`.
- 6. Start the app: `npm run dev`(will open the browser on http://localhost:3000).
+ 6. Add `MONGO_DB_URI` value to your environment variables. 
+ 7. Start the app: `npm run dev`(will open the browser on http://localhost:3000).
 
 
 `Note`: 
