@@ -1,6 +1,6 @@
 # To-Do-App
 
- this is a simple To-Do list application, The application is seperated into backend API generate JSON response and frontend access this api.
+ This is a simple To-Do list application, The application is seperated into backend API generate JSON response and frontend access this api.
  [check demo](https://to-do-app-562.herokuapp.com/)
  
  
@@ -27,4 +27,4 @@
 
 
 `Note`: 
-in development mode the front-end of the app running at port 3000, while the back-end of the app running at port 5000 .
+In development mode the front-end of the app running at port 3000, while the back-end of the app running at port 5000 .
