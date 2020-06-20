@@ -22,7 +22,7 @@
  3. Change to root directory.
  4. Install front-end dependencies: `client-install`.
  5. Install back-end dependencies: `npm install`.
- 6. Add `MONGO_DB_URI` value to your environment variables. 
+ 6. Add `MONGO_DB_URI` value to your environment variables `export MONGO_DB_URI=mongodb://localhost:root`. 
  7. Start the app: `npm run dev`(will open the browser on http://localhost:3000).
 
 
