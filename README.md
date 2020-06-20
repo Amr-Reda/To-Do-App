@@ -9,6 +9,8 @@
  - [Node.js](https://nodejs.org/en/)
  - [Express](https://expressjs.com/)
  - [Reactjs](https://reactjs.org/)
+ - [Redux](https://redux.js.org/)
+ - [React-Redux](https://react-redux.js.org/)
  - [MongoDB](https://www.mongodb.com/)
  - [reactstrap](https://reactstrap.github.io/)
  - [mlab](https://mlab.com/)
