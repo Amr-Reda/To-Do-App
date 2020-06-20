@@ -2,69 +2,26 @@ import React, { Component } from 'react';
 import '../App.css';
 import Item from './item.js';
 import AddButton from './addButton.js';
-
+import { connect } from 'react-redux'
+import {fetchItems, postItem, deleteItem} from '../actions'
 class Profile extends Component {
-	state = {
-		items: [],
-	};
 
 	//get request api
 	async componentDidMount() {
 		const token = await this.props.getIdTokenClaims();
-		fetch('/api', {
-			headers: {
-				authorization: `Bearer ${token.__raw}`,
-			},
-		})
-			.then((res) => {
-				res.json().then((data) => {
-					this.setState({ items: data });
-				});
-			})
-			.catch((err) => console.log(err));
+		this.props.fetchItems(token.__raw)
 	}
 
 	//post request api
 	submitData = async (data) => {
 		const token = await this.props.getIdTokenClaims();
-		fetch('/api', {
-			headers: {
-				authorization: `Bearer ${token.__raw}`,
-				'Content-Type': 'application/json; charset=utf-8',
-			},
-			method: 'POST',
-			body: JSON.stringify(data),
-		})
-			.then((res) => {
-				res.json().then((data) => {
-					this.setState({
-						items: [data, ...this.state.items],
-					});
-				});
-			})
-			.catch((err) => console.log(err));
+		this.props.postItem(token.__raw, data)
 	};
 
 	//delete request api
 	removeData = async (id) => {
 		const token = await this.props.getIdTokenClaims();
-		fetch(`/api/${id}`, {
-			method: 'DELETE',
-			headers: {
-				authorization: `Bearer ${token.__raw}`,
-			},
-		})
-			.then((res) => {
-				res.json().then((data) => {
-					if (data.success) {
-						let newData = this.state.items.filter(
-							(item) => item._id !== id
-						);
-						this.setState({ items: newData });
-					}
-				});
-			})
-			.catch((err) => console.log(err));
+		this.props.deleteItem(token.__raw, id)
 	};
 
 	render() {
@@ -75,7 +32,7 @@ class Profile extends Component {
 					submitData={this.submitData}
 				></AddButton>
 				<Item
-					items={this.state.items}
+					items={this.props.items}
 					removeData={this.removeData}
 				></Item>
 			</div>
@@ -83,4 +40,16 @@ class Profile extends Component {
 	}
 }
 
-export default Profile;
+const mapStateToProps = (state) => {
+	return {
+		items: state.items
+	}
+}
+
+const mapDispatchToProps =  {
+	fetchItems,
+	postItem,
+	deleteItem
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
