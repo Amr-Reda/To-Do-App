@@ -1,7 +1,7 @@
 # To-Do-App
 
  This is a simple To-Do list application, The application is seperated into backend API generate JSON response and frontend access this api.
- [check demo](https://to-do-app-562.herokuapp.com/)
+ [check demo](https://to-do-app-562.herokuapp.com/).
  
  
  ## Technology Used
